@@ -13,9 +13,17 @@ This POM:
   -->
   <groupId>com.rweb</groupId>
   <artifactId>env-java</artifactId>
-  <version>1</version>
+  <version>2</version>
   <name>env-java</name>
   <packaging>pom</packaging>
+
+  <parent>
+    <groupId>com.rweb</groupId>
+    <artifactId>env-deploy</artifactId>
+    <version>1</version>
+    <relativePath/>
+  </parent>
+
 
   <properties>
     <!-- System -->
