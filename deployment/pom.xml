@@ -2,84 +2,101 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.rweb</groupId>
-  <artifactId>env-deploy</artifactId>
-  <version>2</version>
-  <name>env-integration</name>
-  <packaging>pom</packaging>
+    <groupId>com.rweb</groupId>
+    <artifactId>env-deploy</artifactId>
+    <version>3</version>
+    <name>env-integration</name>
+    <packaging>pom</packaging>
 
-  <properties>
-    <maven.deploy-plugin.version>2.7</maven.deploy-plugin.version>
-    <!-- libs -->
-    <wagon.version>1.0-alpha-5</wagon.version>
-  </properties>
+    <properties>
+        <maven.deploy-plugin.version>2.7</maven.deploy-plugin.version>
+        <!-- libs -->
+        <wagon.version>1.0-alpha-5</wagon.version>
+    </properties>
 
-  <repositories>
-    <repository>
-        <id>rweb</id>
-        <name>Rweb french repository</name>
-        <url>http://maven.rwsib.ru/maven</url>
-        <layout>default</layout>
-        <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>interval:10</updatePolicy>
-        </snapshots>
-        <releases>
-            <enabled>true</enabled>
-            <updatePolicy>interval:10</updatePolicy>
-        </releases>
-    </repository>
-  </repositories>
+    <repositories>
+        <repository>
+            <id>rweb-releases</id>
+            <name>rwsib.ru release repository</name>
+            <url>http://java.rwsib.ru/maven/releases</url>
+            <layout>default</layout>
+            <snapshots><enabled>false</enabled></snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>interval:10</updatePolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>rweb-snapshots</id>
+            <name>rwsib.ru snapshot repository</name>
+            <url>http://java.rwsib.ru/maven/snapshots</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>interval:10</updatePolicy>
+            </snapshots>
+            <releases><enabled>false</enabled></releases>
+        </repository>
+    </repositories>
 
-  <pluginRepositories>
-    <pluginRepository>
-        <id>rweb</id>
-        <name>Rweb french repository</name>
-        <url>http://maven.rwsib.ru/maven</url>
-        <layout>default</layout>
-        <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>interval:10</updatePolicy>
-        </snapshots>
-        <releases>
-            <enabled>true</enabled>
-            <updatePolicy>interval:10</updatePolicy>
-        </releases>
-    </pluginRepository>
-  </pluginRepositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>rweb-releases</id>
+            <name>rwsib.ru release repository</name>
+            <url>http://java.rwsib.ru/maven/releases</url>
+            <layout>default</layout>
+            <snapshots><enabled>false</enabled></snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>interval:10</updatePolicy>
+            </releases>
+        </pluginRepository>
+        <pluginRepository>
+            <id>rweb-snapshots</id>
+            <name>rwsib.ru snapshot repository</name>
+            <url>http://java.rwsib.ru/maven/snapshots</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>interval:10</updatePolicy>
+            </snapshots>
+            <releases><enabled>false</enabled></releases>
+        </pluginRepository>
+    </pluginRepositories>
 
-  <distributionManagement>
-      <repository>
-          <uniqueVersion>false</uniqueVersion>
-          <id>no-hope</id>
-	      <name>Rweb french repository</name>
-          <url>scpexe://maven@maven.rwsib.ru/home/maven/httpdocs/maven/</url>
-          <layout>default</layout>
-      </repository>
-  </distributionManagement>
+    <distributionManagement>
+        <repository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>rwsib-releases</id>
+            <name>rwsib.ru release repository</name>
+            <url>scpexe://maven@rwsib.ru:622/var/www/localhost/htdocs/maven/releases/</url>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>rwsib-snapshots</id>
+            <name>rwsib.ru snapshot repository</name>
+            <url>scpexe://maven@rwsib.ru:622/var/www/localhost/htdocs/maven/snapshots/</url>
+            <layout>default</layout>
+        </snapshotRepository>
+    </distributionManagement>
 
-  <build>
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-ssh-external</artifactId>
-        <version>${wagon.version}</version>
-      </extension>
-    </extensions>
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh-external</artifactId>
+                <version>${wagon.version}</version>
+            </extension>
+        </extensions>
 
-
-	<plugins>
-      <plugin>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>${maven.deploy-plugin.version}</version>
-      </plugin>
-    </plugins>
-  </build>
-
-  <dependencyManagement>
-    <dependencies>
-    </dependencies>
-  </dependencyManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven.deploy-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
