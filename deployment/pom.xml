@@ -6,7 +6,7 @@
 
     <groupId>com.rweb</groupId>
     <artifactId>env-deploy</artifactId>
-    <version>4</version>
+    <version>5</version>
     <name>env-integration</name>
     <packaging>pom</packaging>
 
@@ -26,7 +26,9 @@
             <name>rwsib.ru release repository</name>
             <url>http://java.rwsib.ru/maven/releases</url>
             <layout>default</layout>
-            <snapshots><enabled>false</enabled></snapshots>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>interval:10</updatePolicy>
@@ -41,7 +43,9 @@
                 <enabled>true</enabled>
                 <updatePolicy>interval:10</updatePolicy>
             </snapshots>
-            <releases><enabled>false</enabled></releases>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
         </repository>
     </repositories>
 
@@ -51,7 +55,9 @@
             <name>rwsib.ru release repository</name>
             <url>http://java.rwsib.ru/maven/releases</url>
             <layout>default</layout>
-            <snapshots><enabled>false</enabled></snapshots>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>interval:10</updatePolicy>
@@ -66,7 +72,9 @@
                 <enabled>true</enabled>
                 <updatePolicy>interval:10</updatePolicy>
             </snapshots>
-            <releases><enabled>false</enabled></releases>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
         </pluginRepository>
     </pluginRepositories>
 

@@ -22,4 +22,6 @@ out
 .metadata
 .codepro
 .ant-targets-build.xml
-
+*.ipr
+*.iml
+*.iws
