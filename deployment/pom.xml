@@ -6,9 +6,13 @@
 
     <groupId>com.rweb</groupId>
     <artifactId>env-deploy</artifactId>
-    <version>3</version>
+    <version>4</version>
     <name>env-integration</name>
     <packaging>pom</packaging>
+
+    <prerequisites>
+        <maven>3.0</maven>
+    </prerequisites>
 
     <properties>
         <maven.deploy-plugin.version>2.7</maven.deploy-plugin.version>
