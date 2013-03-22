@@ -6,7 +6,7 @@
 
     <groupId>com.rweb</groupId>
     <artifactId>env-deploy</artifactId>
-    <version>5</version>
+    <version>6</version>
     <name>env-integration</name>
     <packaging>pom</packaging>
 
@@ -22,9 +22,9 @@
 
     <repositories>
         <repository>
-            <id>rweb-releases</id>
-            <name>rwsib.ru release repository</name>
-            <url>http://java.rwsib.ru/maven/releases</url>
+            <id>otr2-releases</id>
+            <name>omnitrack release repository</name>
+            <url>http://dev.otr2.no-hope.org/maven/releases</url>
             <layout>default</layout>
             <snapshots>
                 <enabled>false</enabled>
@@ -35,9 +35,9 @@
             </releases>
         </repository>
         <repository>
-            <id>rweb-snapshots</id>
-            <name>rwsib.ru snapshot repository</name>
-            <url>http://java.rwsib.ru/maven/snapshots</url>
+            <id>otr2-snapshots</id>
+            <name>omnitrack snapshot repository</name>
+            <url>http://dev.otr2.no-hope.org/maven/snapshots</url>
             <layout>default</layout>
             <snapshots>
                 <enabled>true</enabled>
@@ -51,9 +51,9 @@
 
     <pluginRepositories>
         <pluginRepository>
-            <id>rweb-releases</id>
-            <name>rwsib.ru release repository</name>
-            <url>http://java.rwsib.ru/maven/releases</url>
+            <id>otr2-releases</id>
+            <name>omnitrack release repository</name>
+            <url>http://dev.otr2.no-hope.org/maven/releases</url>
             <layout>default</layout>
             <snapshots>
                 <enabled>false</enabled>
@@ -64,9 +64,9 @@
             </releases>
         </pluginRepository>
         <pluginRepository>
-            <id>rweb-snapshots</id>
-            <name>rwsib.ru snapshot repository</name>
-            <url>http://java.rwsib.ru/maven/snapshots</url>
+            <id>otr2-snapshots</id>
+            <name>omnitrack snapshot repository</name>
+            <url>http://dev.otr2.no-hope.org/maven/snapshots</url>
             <layout>default</layout>
             <snapshots>
                 <enabled>true</enabled>
@@ -81,29 +81,21 @@
     <distributionManagement>
         <repository>
             <uniqueVersion>false</uniqueVersion>
-            <id>rwsib-releases</id>
+            <id>otr2-releases</id>
             <name>rwsib.ru release repository</name>
-            <url>scpexe://maven@rwsib.ru:622/var/www/localhost/htdocs/maven/releases/</url>
+            <url>http://dev.otr2.no-hope.org/maven/releases/</url>
             <layout>default</layout>
         </repository>
         <snapshotRepository>
             <uniqueVersion>false</uniqueVersion>
-            <id>rwsib-snapshots</id>
+            <id>otr2-snapshots</id>
             <name>rwsib.ru snapshot repository</name>
-            <url>scpexe://maven@rwsib.ru:622/var/www/localhost/htdocs/maven/snapshots/</url>
+            <url>http://dev.otr2.no-hope.org/maven/snapshots/</url>
             <layout>default</layout>
         </snapshotRepository>
     </distributionManagement>
 
     <build>
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ssh-external</artifactId>
-                <version>${wagon.version}</version>
-            </extension>
-        </extensions>
-
         <plugins>
             <plugin>
                 <artifactId>maven-deploy-plugin</artifactId>
