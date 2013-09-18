@@ -1,13 +1,8 @@
 #!/bin/bash
 
-cd deployment
+cd java
 mvn install
 cd ..
 
-
-cd java 
-mvn install
-cd ..
-
-cd integration 
+cd integration
 mvn install

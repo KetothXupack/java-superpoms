@@ -11,18 +11,11 @@
   - Adds 3rdparty implementation of jsr305 (@nullable annotations)
   - Turns on source jar generation
     -->
-    <groupId>com.rweb</groupId>
+    <groupId>org.no-hope</groupId>
     <artifactId>env-java</artifactId>
     <version>9</version>
     <name>env-java</name>
     <packaging>pom</packaging>
-
-    <parent>
-        <groupId>com.rweb</groupId>
-        <artifactId>env-deploy</artifactId>
-        <version>6</version>
-        <relativePath/>
-    </parent>
 
     <prerequisites>
         <maven>3.0</maven>
@@ -117,7 +110,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 
